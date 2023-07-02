@@ -1,0 +1,162 @@
+.header{
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 78;
+  transition: all 0.3s ease-in-out;
+}
+.header.stick{
+  background: #ce9e9e;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
+}
+.header nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1140px;
+  margin: auto;
+  background: #ce9e9e;
+  border-radius: 10px;
+}
+.header nav .title{
+  font-family: 'Oswald', sans-serif;  
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+nav .logos .simage{
+  width: 45px;
+  margin-right: 10px;
+}
+.menu ul{
+ padding: 0;
+ margin: 0;
+ display: flex;
+ align-items: center;
+}
+.menu ul li{
+list-style: none;
+margin-right: 10px;
+}"
+.menu ul li a{
+  position: relative;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Jost', sans-serif;
+  transition: all .3s ease-in-out;
+  text-transform: capitalize; 
+  transition: all 0.3s ease-in-out;
+}
+.menu ul li a.action{
+  color: #D95435;
+}
+.menu ul li a::before{
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--red);
+  bottom: -8px;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+.menu ul li a:hover::before{
+width: 100%;
+left: 0;
+transition: all 0.3s ease-in-out;
+}
+.menu ul li a:hover{
+  color: var(--red);
+  transition: all .3s ease-in-out;
+}
+.menu .button .send-email{
+  padding: 10px 34px 9px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  border-radius: 50px;
+  border: 2px solid #f75023;
+  position: relative;
+  overflow: hidden;
+  text-transform: capitalize;
+  z-index: 2;
+}
+.menu .button .send-email::before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: var(--red);
+  transition: all 0.2s ease-in-out;
+  z-index: -1;
+}
+.menu .button .send-email:hover::before{
+  bottom: 0%;
+  transition: all 0.2s ease-in-out;
+}
+.menu .button .send-email .Resume{
+  color: var(--black);
+}
+.menu .button .send-email:hover .Resume{
+  color: var(--white);
+  position: relative;
+  z-index: 2;
+  transition: all 0.2s ease-in-out;
+}
+
+nav .icon{
+ color: #000;
+ font-size: 30px;
+ display: none;
+}
+
+@media (min-width: 320px) and (max-width: 576px){
+  .header{
+      padding: 20px;
+  }
+  .header.stick{
+      background: #FFF;
+      box-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
+  }
+  .menu{
+      position: absolute;
+      width: 80%;
+      height: 100vh;
+      background: linear-gradient(45deg, #A1C4FD , #C2E9FB);
+      top: 0;
+      left: -100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 0px 20px rgb(0 0 0 / 50%);
+      transition: all 0.3s ease-in-out;
+      z-index: 100;
+  }
+  .menu.active{
+      left: 0;  
+  }
+  .menu ul {
+      padding: 0;
+      margin: 0;
+      display: inline;
+      text-align: center;
+  }
+  .menu ul li {
+      list-style: none;
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+  nav .icon{
+      display: block;
+  }
+}
