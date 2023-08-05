@@ -4,6 +4,11 @@ import BannerSection from "../Banner/BannerSection";
 import ProjectSection from "../Projects/ProjectSection";
 import SkillSection from "../Skill/SkillSection";
 import loader from "../../assets/loader.gif";
+import Service from "../Service/Service";
+import Contact from "../Contact/Contact";
+import { Flowbite } from "flowbite-react";
+import Footer from "../Footer/Footer";
+
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -13,7 +18,7 @@ const Home = () => {
 
     setTimeout(() =>{
       setLoading(false);
-    }, 2000)
+    }, 1000)
   },[])
   return (
     <div>
@@ -21,10 +26,17 @@ const Home = () => {
          <img src={loader} alt="" />
         :
       <>
-      <BannerSection></BannerSection>
+      <Flowbite>
+        <div className="h-[calc(100%-112px)]">
+        <BannerSection></BannerSection>
        <AboutSection></AboutSection>
        <SkillSection></SkillSection>
-       <ProjectSection></ProjectSection>     
+       <ProjectSection></ProjectSection> 
+       <Service></Service>    
+       <Contact></Contact>
+       <Footer></Footer>
+        </div>
+      </Flowbite>
       </>
      }
     </div>
