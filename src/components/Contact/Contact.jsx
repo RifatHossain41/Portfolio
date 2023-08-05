@@ -24,7 +24,7 @@ const Contact = () => {
             progress: undefined,
             theme: "colored",
             });
-            
+        form.current.reset();
       }, (error) => {
           console.log(error.text);
       });
